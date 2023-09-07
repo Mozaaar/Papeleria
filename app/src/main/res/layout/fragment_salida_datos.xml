@@ -44,7 +44,7 @@
         android:ems="10"
         android:inputType="number"
         android:text="@string/input_codigoretirar"
-        android:textColor="#FDFDFD"
+        android:textColor="#020405"
         android:textColorHint="#EFEEEE"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -61,28 +61,29 @@
         android:text="@string/btn_retirararticulo"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.57"
+        app:layout_constraintHorizontal_bias="0.867"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.904" />
+        app:layout_constraintVertical_bias="0.919" />
 
     <TextView
         android:id="@+id/txt_uretirar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/txt_uretirar"
-        android:textSize="18dp"
+        android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.056"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.655" />
+        app:layout_constraintVertical_bias="0.655"
+        tools:ignore="TextSizeCheck" />
 
     <Spinner
         android:id="@+id/sp_uretirar"
         android:layout_width="122dp"
-        android:layout_height="41dp"
+        android:layout_height="48dp"
         android:scrollbarSize="7dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -90,6 +91,19 @@
         app:layout_constraintStart_toEndOf="@+id/txt_uretirar"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.659" />
+
+    <ImageButton
+        android:id="@+id/imagebtn_home"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/Home"
+        android:src="@drawable/casa"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.114"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.928" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

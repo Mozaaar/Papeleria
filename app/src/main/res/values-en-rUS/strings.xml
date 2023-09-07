@@ -1,2 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<resources>
+    <string name="txt_ingrese">Enter your data</string>
+    <string name="input_usuario">Enter your user name</string>
+    <string name="input_contrasena">Enter your password</string>
+    <string name="boton_iniciar_sesion">Login</string>
+    <string name="txt_ingresarDatos">Enter Data</string>
+    <string name="input_Producto">Product name</string>
+    <string name="input_Unidades">Initial Units</string>
+    <string name="input_Valor">Unit value</string>
+    <string name="btn_registrardatos">Register Data</string>
+    <string name="input_codigoretirar">Enter item code</string>
+    <string name="input_unidadesretirar">Units to be removed</string>
+    <string name="btn_retirararticulo">Remove article</string>
+    <string name="btn_Entrada">Register Article</string>
+    <string name="btn_Salida">Remove Article</string>
+    <string name="btn_Inventario">View inventory</string>
+    <string name="sw_Mostrar">Show Password</string>
+    <string name="txt_uretirar">Units to be removed</string>
+</resources>

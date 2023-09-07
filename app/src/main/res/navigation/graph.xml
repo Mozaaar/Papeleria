@@ -33,15 +33,27 @@
         android:id="@+id/entradaDatosFragment"
         android:name="moviles2023.papeleria.EntradaDatosFragment"
         android:label="fragment_entrada_datos"
-        tools:layout="@layout/fragment_entrada_datos" />
+        tools:layout="@layout/fragment_entrada_datos" >
+        <action
+            android:id="@+id/action_entradaDatosFragment_to_opcionesFragment"
+            app:destination="@id/opcionesFragment" />
+    </fragment>
     <fragment
         android:id="@+id/salidaDatosFragment"
         android:name="moviles2023.papeleria.SalidaDatosFragment"
         android:label="fragment_salida_datos"
-        tools:layout="@layout/fragment_salida_datos" />
+        tools:layout="@layout/fragment_salida_datos" >
+        <action
+            android:id="@+id/action_salidaDatosFragment_to_opcionesFragment"
+            app:destination="@id/opcionesFragment" />
+    </fragment>
     <fragment
         android:id="@+id/inventarioFragment"
         android:name="moviles2023.papeleria.InventarioFragment"
         android:label="fragment_inventario"
-        tools:layout="@layout/fragment_inventario" />
+        tools:layout="@layout/fragment_inventario" >
+        <action
+            android:id="@+id/action_inventarioFragment_to_opcionesFragment2"
+            app:destination="@id/opcionesFragment" />
+    </fragment>
 </navigation>

@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".EntradaDatosFragment">
 
     <!-- TODO: Update blank fragment layout -->
+
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar2"
         android:layout_width="match_parent"
@@ -83,8 +85,8 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/input_Valor"
         android:layout_alignEnd="@+id/input_Valor"
-        android:layout_marginTop="84dp"
-        android:layout_marginEnd="68dp"
+        android:layout_marginTop="85dp"
+        android:layout_marginEnd="56dp"
         android:text="@string/txt_registrardatos" />
 
     <Button
@@ -97,5 +99,16 @@
         android:layout_marginEnd="27dp"
         android:onClick="registrar"
         android:text="@string/btn_registrardatos" />
+
+    <ImageButton
+        android:id="@+id/imagebtn_home"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txt_registrardatos"
+        android:layout_alignEnd="@+id/txt_registrardatos"
+        android:layout_marginTop="101dp"
+        android:layout_marginEnd="52dp"
+        android:contentDescription="@string/Home"
+        android:src="@drawable/casa" />
 
 </RelativeLayout>
