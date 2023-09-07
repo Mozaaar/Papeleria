@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/graph"
+    app:startDestination="@id/mainFragment">
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="moviles2023.papeleria.MainFragment"
+        android:label="fragment_main"
+        tools:layout="@layout/fragment_main" >
+        <action
+            android:id="@+id/action_mainFragment_to_opcionesFragment"
+            app:destination="@id/opcionesFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/opcionesFragment"
+        android:name="moviles2023.papeleria.OpcionesFragment"
+        android:label="fragment_opciones"
+        tools:layout="@layout/fragment_opciones" >
+        <action
+            android:id="@+id/action_opcionesFragment_to_entradaDatosFragment"
+            app:destination="@id/entradaDatosFragment" />
+        <action
+            android:id="@+id/action_opcionesFragment_to_salidaDatosFragment"
+            app:destination="@id/salidaDatosFragment" />
+        <action
+            android:id="@+id/action_opcionesFragment_to_inventarioFragment"
+            app:destination="@id/inventarioFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/entradaDatosFragment"
+        android:name="moviles2023.papeleria.EntradaDatosFragment"
+        android:label="fragment_entrada_datos"
+        tools:layout="@layout/fragment_entrada_datos" />
+    <fragment
+        android:id="@+id/salidaDatosFragment"
+        android:name="moviles2023.papeleria.SalidaDatosFragment"
+        android:label="fragment_salida_datos"
+        tools:layout="@layout/fragment_salida_datos" />
+    <fragment
+        android:id="@+id/inventarioFragment"
+        android:name="moviles2023.papeleria.InventarioFragment"
+        android:label="fragment_inventario"
+        tools:layout="@layout/fragment_inventario" />
+</navigation>

@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".EntradaDatosFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme" />
+
+    <TextView
+        android:id="@+id/txt_ingresarDatos"
+        android:layout_width="146dp"
+        android:layout_height="35dp"
+        android:layout_below="@+id/toolbar2"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="137dp"
+        android:layout_marginTop="26dp"
+        android:layout_marginEnd="128dp"
+        android:text="@string/txt_ingresarDatos"
+        android:textSize="20sp"
+        tools:ignore="TextSizeCheck" />
+
+    <EditText
+        android:id="@+id/input_Producto"
+        android:layout_width="228dp"
+        android:layout_height="81dp"
+        android:layout_below="@+id/txt_ingresarDatos"
+        android:layout_alignStart="@+id/txt_ingresarDatos"
+        android:layout_alignEnd="@+id/txt_ingresarDatos"
+        android:layout_marginStart="-127dp"
+        android:layout_marginTop="68dp"
+        android:layout_marginEnd="37dp"
+        android:autofillHints=""
+        android:ems="10"
+        android:inputType="text"
+        android:text="@string/input_Producto"
+        tools:ignore="LabelFor,VisualLintTextFieldSize,TextSizeCheck" />
+
+    <EditText
+        android:id="@+id/input_Unidades"
+        android:layout_width="237dp"
+        android:layout_height="77dp"
+        android:layout_below="@+id/input_Producto"
+        android:layout_alignStart="@+id/input_Producto"
+        android:layout_alignEnd="@+id/input_Producto"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="-4dp"
+        android:autofillHints=""
+        android:ems="10"
+        android:inputType="number"
+        android:text="@string/input_Unidades"
+        tools:ignore="LabelFor,VisualLintTextFieldSize" />
+
+    <EditText
+        android:id="@+id/input_Valor"
+        android:layout_width="wrap_content"
+        android:layout_height="76dp"
+        android:layout_below="@+id/input_Unidades"
+        android:layout_alignStart="@+id/input_Unidades"
+        android:layout_alignEnd="@+id/input_Unidades"
+        android:layout_marginStart="-1dp"
+        android:layout_marginTop="47dp"
+        android:layout_marginEnd="7dp"
+        android:autofillHints=""
+        android:ems="10"
+        android:inputType="number"
+        android:minHeight="48dp"
+        android:text="@string/input_Valor"
+        tools:ignore="LabelFor,VisualLintTextFieldSize" />
+
+    <TextView
+        android:id="@+id/txt_registrardatos"
+        android:layout_width="152dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/input_Valor"
+        android:layout_alignEnd="@+id/input_Valor"
+        android:layout_marginTop="84dp"
+        android:layout_marginEnd="68dp"
+        android:text="@string/txt_registrardatos" />
+
+    <Button
+        android:id="@+id/btn_registrardatos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/input_Valor"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="143dp"
+        android:layout_marginEnd="27dp"
+        android:onClick="registrar"
+        android:text="@string/btn_registrardatos" />
+
+</RelativeLayout>

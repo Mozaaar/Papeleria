@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name" translatable="false">Papeleria</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment" translatable="false">Hello blank fragment</string>
+    <string name="txt_ingrese">Registre sus datos</string>
+    <string name="input_usuario">Ingrese su nombre de usuario</string>
+    <string name="input_contrasena">Ingrese su contraseña</string>
+    <string name="boton_iniciar_sesion">Iniciar sesión</string>
+    <string name="txt_ingresarDatos">Ingrese Datos</string>
+    <string name="input_Producto">Nombre del producto</string>
+    <string name="input_Unidades">Unidades Iniciales</string>
+    <string name="input_Valor">Valor unitario</string>
+    <string name="btn_registrardatos">Registrar Datos</string>
+    <string name="txt_registrardatos" />
+    <string name="input_codigoretirar">Ingrese código del artículo</string>
+    <string name="input_unidadesretirar">Unidades a retirar\n</string>
+    <string name="btn_retirararticulo">Retirar artículo</string>
+    <string name="btn_Entrada">Registrar Artículo</string>
+    <string name="btn_Salida">Sacar Producto</string>
+    <string name="btn_Inventario">Ver inventario</string>
+    <string name="txt_ingresaono" />
+    <string name="sw_Mostrar">Mostrar Contraseña</string>
+    <string name="txt_uretirar">Unidades a retirar</string>
+</resources>
