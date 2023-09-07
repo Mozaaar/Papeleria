@@ -23,4 +23,9 @@
     <string name="txt_uretirar">Unidades a retirar</string>
     <string name="home" translatable="false">Home</string>
     <string name="Home" translatable="false">Home</string>
+    <string name="txt_codigoInv">Código</string>
+    <string name="txt_productoInv">Producto</string>
+    <string name="txt_stockInv" translatable="false">Stock</string>
+    <string name="txt_salidasInv">Salidas</string>
+    <string name="txt_valorInv">Valor Unitario</string>
 </resources>

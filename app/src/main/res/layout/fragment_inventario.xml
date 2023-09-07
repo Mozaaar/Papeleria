@@ -17,34 +17,35 @@
             tools:ignore="UselessParent">
 
             <TextView
-                android:id="@+id/textView"
-                android:layout_width="58dp"
+                android:id="@+id/txt_codigoIn"
+                android:layout_width="54dp"
                 android:layout_height="wrap_content"
-                android:text="Código" />
+                android:text="@string/txt_codigoInv"
+                tools:ignore="TextSizeCheck" />
 
             <TextView
-                android:id="@+id/textView2"
+                android:id="@+id/txt_productoInv"
                 android:layout_width="113dp"
                 android:layout_height="wrap_content"
-                android:text="Producto" />
+                android:text="@string/txt_productoInv" />
 
             <TextView
-                android:id="@+id/textView4"
+                android:id="@+id/txt_stockInv"
                 android:layout_width="69dp"
                 android:layout_height="wrap_content"
-                android:text="Stock" />
+                android:text="@string/txt_stockInv" />
 
             <TextView
-                android:id="@+id/textView3"
+                android:id="@+id/txt_salidasInv"
                 android:layout_width="70dp"
                 android:layout_height="wrap_content"
-                android:text="Salidas" />
+                android:text="@string/txt_salidasInv" />
 
             <TextView
-                android:id="@+id/textView5"
+                android:id="@+id/txt_valorInv"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:text="Valor Unitario" />
+                android:text="@string/txt_valorInv" />
         </TableRow>
     </TableLayout>
 

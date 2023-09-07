@@ -17,4 +17,8 @@
     <string name="btn_Inventario">View inventory</string>
     <string name="sw_Mostrar">Show Password</string>
     <string name="txt_uretirar">Units to be removed</string>
+    <string name="txt_codigoInv">Code</string>
+    <string name="txt_productoInv">Product</string>
+    <string name="txt_salidasInv">Exits</string>
+    <string name="txt_valorInv">Unit Value</string>
 </resources>
