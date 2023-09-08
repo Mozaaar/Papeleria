@@ -11,7 +11,10 @@ import androidx.navigation.Navigation;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.CompoundButton;
+import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.RadioButton;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -59,19 +62,55 @@ public class SalidaDatosFragment extends Fragment {
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
     }
-
+    RadioButton nom, cod; //Defino variables de las dos opciones que tiene mi radiobutton
+    EditText nome, code; //Defino variables de los editText que muestre dependiendo de la opcion de radiobutton
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_salida_datos, container, false);
-    }
-    ImageButton homee;
+        View view = inflater.inflate(R.layout.fragment_salida_datos, container, false);
+        // Inicializa los radiobuttons y los edittexts
+        cod  = view.findViewById(R.id.cb_porcodígo);
+        nom = (RadioButton) view.findViewById(R.id.cb_pornombre);
+        code = (EditText)view.findViewById(R.id.input_codigoretirar);
+        nome = (EditText)view.findViewById(R.id.input_nomar);
 
-    @SuppressLint("WrongViewCast")
+        // Agrega un listener para los RadioButtons
+        cod.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    code.setVisibility(View.VISIBLE);
+                    nome.setVisibility(View.GONE);
+                } else {
+                    code.setVisibility(View.GONE);
+                }
+            }
+        });
+
+        nom.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    nome.setVisibility(View.VISIBLE);
+                    code.setVisibility(View.GONE);
+                } else {
+                    nome.setVisibility(View.GONE);
+                }
+            }
+        });
+
+        return view;
+    }
+
+    ImageButton homee;// Defino variables para boton que lleva al home de la app
+
+
+
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
 
+        //Direccionamiento al home de la app
         homee = (ImageButton) view.findViewById(R.id.imagebtn_home);
         homee.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -80,6 +119,7 @@ public class SalidaDatosFragment extends Fragment {
 
             }
         });
+
 
 
 

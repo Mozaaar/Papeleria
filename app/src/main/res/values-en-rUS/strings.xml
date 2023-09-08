@@ -21,4 +21,11 @@
     <string name="txt_productoInv">Product</string>
     <string name="txt_salidasInv">Exits</string>
     <string name="txt_valorInv">Unit Value</string>
+    <string name="cb_porcodigo">By Code</string>
+    <string name="cb_pornombre">By name</string>
+    <string name="input_nomar">Enter item name</string>
+    <string name="txt_formaderetirar">Select the search method of the item you wish to withdraw</string>
+    <string name="cb_escritura">Writing</string>
+    <string name="cb_oficina">Office</string>
+    <string name="cb_otros">Others</string>
 </resources>

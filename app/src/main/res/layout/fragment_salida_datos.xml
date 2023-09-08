@@ -38,21 +38,37 @@
 
     <EditText
         android:id="@+id/input_codigoretirar"
-        android:layout_width="275dp"
-        android:layout_height="92dp"
+        android:layout_width="391dp"
+        android:layout_height="79dp"
         android:autofillHints=""
         android:ems="10"
         android:inputType="number"
         android:text="@string/input_codigoretirar"
-        android:textColor="#020405"
+        android:textColor="#ADB1B3"
         android:textColorHint="#EFEEEE"
+        android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.084"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.469"
+        app:layout_constraintVertical_bias="0.539"
         tools:ignore="LabelFor,TextSizeCheck" />
+
+    <EditText
+        android:id="@+id/input_nomar"
+        android:layout_width="398dp"
+        android:layout_height="78dp"
+        android:layout_marginBottom="476dp"
+        android:autofillHints=""
+        android:ems="10"
+        android:inputType="text"
+        android:text="@string/input_nomar"
+        android:textColor="#ACB0B2"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="LabelFor" />
 
     <Button
         android:id="@+id/btn_retirararticulo"
@@ -66,32 +82,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.919" />
 
-    <TextView
-        android:id="@+id/txt_uretirar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/txt_uretirar"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.056"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.655"
-        tools:ignore="TextSizeCheck" />
-
-    <Spinner
-        android:id="@+id/sp_uretirar"
-        android:layout_width="122dp"
-        android:layout_height="48dp"
-        android:scrollbarSize="7dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.52"
-        app:layout_constraintStart_toEndOf="@+id/txt_uretirar"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.659" />
-
     <ImageButton
         android:id="@+id/imagebtn_home"
         android:layout_width="wrap_content"
@@ -100,10 +90,70 @@
         android:src="@drawable/casa"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.114"
+        app:layout_constraintHorizontal_bias="0.048"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.928" />
+        app:layout_constraintVertical_bias="0.01" />
+
+    <RadioGroup
+        android:id="@+id/radioGroup2"
+        android:layout_width="327dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="168dp"
+        android:checkedButton="@id/cb_porcodígo"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.242"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/toolbar3">
+
+        <RadioButton
+            android:id="@+id/cb_porcodígo"
+            android:layout_width="123dp"
+            android:layout_height="wrap_content"
+            android:text="@string/cb_porcodigo"
+            tools:ignore="TouchTargetSizeCheck" />
+
+        <RadioButton
+            android:id="@+id/cb_pornombre"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/cb_pornombre"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.549"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.326"
+            tools:ignore="TouchTargetSizeCheck" />
+
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/txt_formaderetirar"
+        android:layout_width="361dp"
+        android:layout_height="51dp"
+        android:text="@string/txt_formaderetirar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.437"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/radioGroup2"
+        app:layout_constraintVertical_bias="0.013" />
+
+    <EditText
+        android:id="@+id/input_unidadesretirar"
+        android:layout_width="394dp"
+        android:layout_height="75dp"
+        android:ems="10"
+        android:hint="@string/input_unidadesretirar"
+        android:inputType="number"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.712" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

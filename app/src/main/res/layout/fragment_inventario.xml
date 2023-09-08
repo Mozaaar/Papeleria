@@ -7,9 +7,34 @@
     android:orientation="vertical"
     tools:context=".InventarioFragment">
 
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?attr/colorPrimary"
+            android:minHeight="?attr/actionBarSize"
+            android:theme="?attr/actionBarTheme" />
+
+        <ImageButton
+            android:id="@+id/imagebtn_home"
+            android:layout_width="48dp"
+            android:layout_height="46dp"
+            android:layout_gravity="center|left"
+            android:contentDescription="@string/Home"
+            android:foregroundGravity="left|center"
+            android:src="@drawable/casa"
+            tools:ignore="RtlHardcoded,TouchTargetSizeCheck" />
+
+    </FrameLayout>
+
     <TableLayout
         android:layout_width="wrap_content"
-        android:layout_height="757dp">
+        android:layout_height="757dp"
+        tools:ignore="VisualLintBounds">
 
         <TableRow
             android:layout_width="match_parent"
@@ -48,22 +73,5 @@
                 android:text="@string/txt_valorInv" />
         </TableRow>
     </TableLayout>
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <ImageButton
-            android:id="@+id/imagebtn_home"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:contentDescription="@string/Home"
-            android:src="@drawable/casa"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.093"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </LinearLayout>

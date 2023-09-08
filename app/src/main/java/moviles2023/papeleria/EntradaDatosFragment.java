@@ -11,8 +11,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.ImageButton;
-import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -82,24 +83,56 @@ public class EntradaDatosFragment extends Fragment {
 
     }
 
-    TextView messageTextView;
+
+    CheckBox escritura, oficina, otros;
+    TextView resultados;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_entrada_datos, container, false);
-        Button button = view.findViewById(R.id.btn_registrardatos);
-        messageTextView = view.findViewById(R.id.txt_registrardatos);
-
-        button.setOnClickListener(new View.OnClickListener() {
+        escritura = view.findViewById(R.id.cb_escritura);
+        oficina = view.findViewById(R.id.cb_oficina);
+        otros = view.findViewById(R.id.cb_otros);
+        resultados = view.findViewById(R.id.txt_tiposeleccionado);
+        escritura.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
-            public void onClick(View view) {
-                // Mostrar el mensaje de registro exitoso
-                messageTextView.setText("Registro exitoso");
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                updateTextViewResult();
+            }
+        });
+        oficina.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                updateTextViewResult();
+            }
+        });
+        otros.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                updateTextViewResult();
             }
         });
 
-        return view;
 
+
+        return view;
+    }
+    private void updateTextViewResult() {
+        StringBuilder result = new StringBuilder();
+
+        if (escritura.isChecked()) {
+            result.append("Escritura seleccionado\n");
+        }
+
+        if (oficina.isChecked()) {
+            result.append("Oficina seleccionado\n");
+        }
+        if (otros.isChecked()) {
+            result.append("Otros seleccionado\n");
+        }
+
+        // Establece el texto actualizado en el TextView
+        resultados.setText(result.toString());
     }
 
 

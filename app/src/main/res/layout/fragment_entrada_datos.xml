@@ -32,14 +32,14 @@
 
     <EditText
         android:id="@+id/input_Producto"
-        android:layout_width="228dp"
-        android:layout_height="81dp"
+        android:layout_width="match_parent"
+        android:layout_height="85dp"
         android:layout_below="@+id/txt_ingresarDatos"
         android:layout_alignStart="@+id/txt_ingresarDatos"
         android:layout_alignEnd="@+id/txt_ingresarDatos"
-        android:layout_marginStart="-127dp"
+        android:layout_marginStart="-137dp"
         android:layout_marginTop="68dp"
-        android:layout_marginEnd="37dp"
+        android:layout_marginEnd="-128dp"
         android:autofillHints=""
         android:ems="10"
         android:inputType="text"
@@ -48,14 +48,14 @@
 
     <EditText
         android:id="@+id/input_Unidades"
-        android:layout_width="237dp"
-        android:layout_height="77dp"
+        android:layout_width="393dp"
+        android:layout_height="78dp"
         android:layout_below="@+id/input_Producto"
         android:layout_alignStart="@+id/input_Producto"
         android:layout_alignEnd="@+id/input_Producto"
-        android:layout_marginStart="0dp"
-        android:layout_marginTop="50dp"
-        android:layout_marginEnd="-4dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="57dp"
+        android:layout_marginEnd="-2dp"
         android:autofillHints=""
         android:ems="10"
         android:inputType="number"
@@ -64,14 +64,14 @@
 
     <EditText
         android:id="@+id/input_Valor"
-        android:layout_width="wrap_content"
-        android:layout_height="76dp"
+        android:layout_width="393dp"
+        android:layout_height="71dp"
         android:layout_below="@+id/input_Unidades"
         android:layout_alignStart="@+id/input_Unidades"
         android:layout_alignEnd="@+id/input_Unidades"
-        android:layout_marginStart="-1dp"
-        android:layout_marginTop="47dp"
-        android:layout_marginEnd="7dp"
+        android:layout_marginStart="-2dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginEnd="2dp"
         android:autofillHints=""
         android:ems="10"
         android:inputType="number"
@@ -79,24 +79,14 @@
         android:text="@string/input_Valor"
         tools:ignore="LabelFor,VisualLintTextFieldSize" />
 
-    <TextView
-        android:id="@+id/txt_registrardatos"
-        android:layout_width="152dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/input_Valor"
-        android:layout_alignEnd="@+id/input_Valor"
-        android:layout_marginTop="85dp"
-        android:layout_marginEnd="56dp"
-        android:text="@string/txt_registrardatos" />
-
     <Button
         android:id="@+id/btn_registrardatos"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/input_Valor"
         android:layout_alignParentEnd="true"
-        android:layout_marginTop="143dp"
-        android:layout_marginEnd="27dp"
+        android:layout_marginTop="201dp"
+        android:layout_marginEnd="17dp"
         android:onClick="registrar"
         android:text="@string/btn_registrardatos" />
 
@@ -104,11 +94,59 @@
         android:id="@+id/imagebtn_home"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/txt_registrardatos"
         android:layout_alignEnd="@+id/txt_registrardatos"
-        android:layout_marginTop="101dp"
-        android:layout_marginEnd="52dp"
+        android:layout_marginEnd="98dp"
         android:contentDescription="@string/Home"
-        android:src="@drawable/casa" />
+        android:src="@drawable/casa"
+        tools:ignore="UnknownId" />
+
+    <CheckBox
+        android:id="@+id/cb_otros"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/input_Valor"
+        android:layout_marginStart="38dp"
+        android:layout_marginTop="74dp"
+        android:layout_toEndOf="@+id/cb_oficina"
+        android:text="@string/cb_otros" />
+
+    <CheckBox
+        android:id="@+id/cb_escritura"
+        android:layout_width="127dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/input_Valor"
+        android:layout_alignStart="@+id/input_Valor"
+        android:layout_marginStart="9dp"
+        android:layout_marginTop="76dp"
+        android:text="@string/cb_escritura" />
+
+    <CheckBox
+        android:id="@+id/cb_oficina"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/input_Valor"
+        android:layout_marginStart="26dp"
+        android:layout_marginTop="74dp"
+        android:layout_toEndOf="@+id/cb_escritura"
+        android:text="@string/cb_oficina" />
+
+    <TextView
+        android:id="@+id/txt_tiposeleccionado"
+        android:layout_width="345dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/cb_escritura"
+        android:layout_alignStart="@+id/cb_escritura"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="33dp" />
+
+    <TextView
+        android:id="@+id/txt_tipo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/input_Valor"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="29dp"
+        android:layout_marginTop="30dp"
+        android:text="Seleccione su tipo" />
 
 </RelativeLayout>
