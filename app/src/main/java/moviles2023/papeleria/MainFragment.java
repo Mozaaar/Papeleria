@@ -1,5 +1,6 @@
 package moviles2023.papeleria;
 
+import android.database.Cursor;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -16,6 +17,10 @@ import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.Switch;
+import android.widget.Toast;
+
+import moviles2023.papeleria.data.InventarioDBHelper;
+import moviles2023.papeleria.data.Usuario;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -24,12 +29,16 @@ import android.widget.Switch;
  */
 public class MainFragment extends Fragment {
     Switch ocultar;
-
     boolean isVisible = false;
-
     EditText passwordEditText;
     Switch showPasswordSwitch;
     Button ingresar;
+// Base de datos
+    private EditText nomUsuario;
+    private EditText password;
+    private Button loginBoton;
+    private Button registrarBoton;
+    private InventarioDBHelper baseDatos;
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -117,9 +126,41 @@ public class MainFragment extends Fragment {
             }
         });
 
+        //Base de datos
+        nomUsuario = (EditText) getView().findViewById(R.id.input_usuario);
+        password = (EditText) getView().findViewById(R.id.input_contrasena);
+        loginBoton = (Button) getView().findViewById(R.id.boton_iniciar_sesion);
+        registrarBoton = (Button) getView().findViewById(R.id.btn_registrar);
+
+        baseDatos = new InventarioDBHelper( getContext());
+        loginBoton.setOnClickListener( new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Cursor usuarioConsultado = baseDatos.getUsuarioByIdPassword( nomUsuario.getText().toString(),
+                        password.getText().toString());
+                if(usuarioConsultado.moveToFirst()){
+                    Navigation.findNavController(view).navigate(R.id.usuariosFragment);
+                }else{
+                    Toast.makeText( getActivity(),"Datos incorrectos",Toast.LENGTH_LONG ).show();
+                }
+            }
+        } );
+
+        registrarBoton.setOnClickListener( new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                int idValue = Integer.parseInt(nomUsuario.getText().toString());
+                int passwordValue = Integer.parseInt( password.getText().toString() );
+                Usuario usuarioNuevo = new Usuario(idValue,passwordValue,"Pepe");
+                baseDatos.saveUser( usuarioNuevo );
+            }
+        } );
+    }
+
+
     }
 
 
 
 
-}
+

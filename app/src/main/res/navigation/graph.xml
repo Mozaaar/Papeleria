@@ -28,6 +28,9 @@
         <action
             android:id="@+id/action_opcionesFragment_to_inventarioFragment"
             app:destination="@id/inventarioFragment" />
+        <action
+            android:id="@+id/action_opcionesFragment_to_usuariosFragment"
+            app:destination="@id/usuariosFragment" />
     </fragment>
     <fragment
         android:id="@+id/entradaDatosFragment"
@@ -56,4 +59,9 @@
             android:id="@+id/action_inventarioFragment_to_opcionesFragment2"
             app:destination="@id/opcionesFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/usuariosFragment"
+        android:name="moviles2023.papeleria.UsuariosFragment"
+        android:label="fragment_usuarios"
+        tools:layout="@layout/fragment_usuarios" />
 </navigation>

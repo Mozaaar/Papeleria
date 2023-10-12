@@ -1,8 +1,11 @@
 package moviles2023.papeleria.data;
 
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import moviles2023.papeleria.data.UsuarioContract.UsuarioEntry;
+
 
 public class InventarioDBHelper extends SQLiteOpenHelper {
 
@@ -14,11 +17,75 @@ public class InventarioDBHelper extends SQLiteOpenHelper {
     }
     @Override
     public void onCreate(SQLiteDatabase sq) {
-        sq.execSQL("CREATE TABLE Usuario()" );
+
+        sq.execSQL("CREATE TABLE " + UsuarioEntry.TABLE_NAME + " (" +
+                UsuarioEntry.ID + " INTEGER PRIMARY KEY," +
+                UsuarioEntry.NAME + " TEXT NOT NULL, " +
+                UsuarioEntry.PASSWORD + " INTEGER NOT NULL)");
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
 
+    }
+
+    public long saveUser(Usuario usuario){
+        SQLiteDatabase sqLiteDatabase = getWritableDatabase();
+        return sqLiteDatabase.insert(
+            UsuarioEntry.TABLE_NAME,
+            null,
+            usuario.toContentValues());
+    }
+
+    public Cursor getAllUsuarios(){
+        return getReadableDatabase()
+                .query(
+                        UsuarioEntry.TABLE_NAME,
+                        null,
+                        null,
+                        null,
+                        null,
+                        null,
+                        null,
+                        null);
+    }
+
+    public Cursor getUsuarioById(String usuarioId){
+        Cursor c = getReadableDatabase().query(
+                UsuarioEntry.TABLE_NAME,
+                null,
+                UsuarioEntry.ID + " LIKE ?",
+                new String[]{usuarioId},
+                null,
+                null,
+                null);
+        return c;
+    }
+
+    public Cursor getUsuarioByIdPassword(String usuarioId,String usuarioPassword){
+        Cursor c = getReadableDatabase().query(
+                UsuarioEntry.TABLE_NAME,
+                null,
+                UsuarioEntry.ID + " LIKE ? AND "+ UsuarioEntry.PASSWORD + " LIKE ?",
+                new String[]{usuarioId, usuarioPassword},
+                null,
+                null,
+                null);
+        return c;
+    }
+
+    public  int daleteUsuario(String usuarioId){
+        return getWritableDatabase().delete(
+                UsuarioEntry.TABLE_NAME,
+                UsuarioEntry.ID + " LIKE ?",
+                new String[]{usuarioId});
+    }
+
+    public int updateUsuario(Usuario usuarioModificar, String usuarioId){
+        return getWritableDatabase().update(
+                UsuarioEntry.TABLE_NAME,
+                usuarioModificar.toContentValues(),
+                UsuarioEntry.ID + " LIKE ?",
+                new String[]{usuarioId});
     }
 }

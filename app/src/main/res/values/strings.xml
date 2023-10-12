@@ -32,7 +32,8 @@
     <string name="cb_pornombre">Por nombre</string>
     <string name="input_nomar">Ingrese nombre del articulo</string>
     <string name="txt_formaderetirar">Seleccione el método de busqueda del articulo que desea retirar</string>
-    <string name="cb_escritura" >Escritura</string>
+    <string name="cb_escritura">Escritura</string>
     <string name="cb_oficina">Oficina</string>
     <string name="cb_otros">Otros</string>
+    <string name="btn_registrar">Registrar</string>
 </resources>

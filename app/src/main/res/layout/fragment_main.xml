@@ -21,7 +21,7 @@
     <EditText
         android:id="@+id/input_usuario"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="12dp"
         android:layout_gravity="center_horizontal"
         android:layout_weight="1"
         android:autofillHints=""
@@ -51,12 +51,25 @@
         android:text="@string/sw_Mostrar"
         tools:ignore="UseSwitchCompatOrMaterialXml" />
 
-    <Button
-        android:id="@+id/boton_iniciar_sesion"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_weight="0.5"
-        android:text="@string/boton_iniciar_sesion" />
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/boton_iniciar_sesion"
+            android:layout_width="78dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_horizontal"
+            android:layout_weight="0.5"
+            android:text="@string/boton_iniciar_sesion" />
+
+        <Button
+            android:id="@+id/btn_registrar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5"
+            android:text="@string/btn_registrar" />
+    </LinearLayout>
 
 </LinearLayout>
