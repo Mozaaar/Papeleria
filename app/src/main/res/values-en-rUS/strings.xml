@@ -28,4 +28,8 @@
     <string name="cb_escritura">Writing</string>
     <string name="cb_oficina">Office</string>
     <string name="cb_otros">Others</string>
+    <string name="btn_registrar">Register</string>
+    <string name="input_codigo">"Enter code "</string>
+    <string name="input_idusuario">User Id</string>
+    <string name="btn_usuarios">"View Users "</string>
 </resources>

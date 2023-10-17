@@ -6,39 +6,44 @@ import moviles2023.papeleria.data.UsuarioContract.UsuarioEntry;
 
 public class Usuario {
     private int id;
-    private String nomUsuario;
     private int password;
+    private String nombre;
 
-    public Usuario(int id, int nomUsuario, String password) {
+    public Usuario(int id, int password, String nombre) {
         this.id = id;
-        this.nomUsuario = nomUsuario;
         this.password = password;
+        this.nombre = nombre;
     }
 
     public Usuario(Cursor cur) {
         id = cur.getInt( cur.getColumnIndex( UsuarioEntry.ID ) );
-        nomUsuario= cur.getString(cur.getColumnIndex(UsuarioEntry.NAME));
         password= cur.getInt(cur.getColumnIndex(UsuarioEntry.PASSWORD));
+        nombre= cur.getString(cur.getColumnIndex(UsuarioEntry.NAME));
     }
     public ContentValues toContentValues(){
-        ContentValues conten = new ContentValues();
-        conten.put( UsuarioEntry.ID,id );
-        conten.put(UsuarioEntry.NAME, nomUsuario);
-        conten.put(UsuarioEntry.PASSWORD, password);
-
-        return conten;
+        ContentValues values = new ContentValues();
+        values.put( UsuarioEntry.ID,id );
+        values.put( UsuarioEntry.PASSWORD,password );
+        values.put( UsuarioEntry.NAME,nombre );
+        return values;
     }
 
     public int getId() {
+
         return id;
     }
-
-    public String getNumUsuario() {
-        return nomUsuario;
-    }
-
     public int getPassword() {
+
         return password;
     }
+    public String getNumUsuario() {
+
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
 
 }

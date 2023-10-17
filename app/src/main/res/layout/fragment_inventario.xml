@@ -31,47 +31,9 @@
 
     </FrameLayout>
 
-    <TableLayout
-        android:layout_width="wrap_content"
-        android:layout_height="757dp"
-        tools:ignore="VisualLintBounds">
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            tools:ignore="UselessParent">
-
-            <TextView
-                android:id="@+id/txt_codigoIn"
-                android:layout_width="54dp"
-                android:layout_height="wrap_content"
-                android:text="@string/txt_codigoInv"
-                tools:ignore="TextSizeCheck" />
-
-            <TextView
-                android:id="@+id/txt_productoInv"
-                android:layout_width="113dp"
-                android:layout_height="wrap_content"
-                android:text="@string/txt_productoInv" />
-
-            <TextView
-                android:id="@+id/txt_stockInv"
-                android:layout_width="69dp"
-                android:layout_height="wrap_content"
-                android:text="@string/txt_stockInv" />
-
-            <TextView
-                android:id="@+id/txt_salidasInv"
-                android:layout_width="70dp"
-                android:layout_height="wrap_content"
-                android:text="@string/txt_salidasInv" />
-
-            <TextView
-                android:id="@+id/txt_valorInv"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:text="@string/txt_valorInv" />
-        </TableRow>
-    </TableLayout>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/listaProductos"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 
 </LinearLayout>

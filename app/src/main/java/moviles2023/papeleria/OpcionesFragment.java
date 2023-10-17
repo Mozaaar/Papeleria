@@ -70,7 +70,7 @@ public class OpcionesFragment extends Fragment {
         return inflater.inflate(R.layout.fragment_opciones, container, false);
     }
 
-    Button entrada, salida, inventario;
+    Button entrada, salida, inventario, usuario;
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
@@ -100,6 +100,13 @@ public class OpcionesFragment extends Fragment {
             }
         });
 
+        usuario = (Button)view.findViewById(R.id.btn_usuarios);
+        usuario.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Navigation.findNavController(view).navigate(R.id.usuariosFragment);
+            }
+        });
 
     }
 }

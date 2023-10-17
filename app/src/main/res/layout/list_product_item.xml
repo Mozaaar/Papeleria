@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="53dp"
+        android:layout_height="46dp"
+        android:layout_marginTop="16dp"
+        android:contentDescription="@string/todo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.047"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@android:drawable/ic_menu_gallery"
+        tools:ignore="ImageContrastCheck" />
+
+    <TextView
+        android:id="@+id/txt_codigo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/txt_codigoInv"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.057"
+        app:layout_constraintStart_toEndOf="@+id/imageView"
+        app:layout_constraintTop_toBottomOf="@+id/txt_codigo2"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/txt_codigo2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="@string/txt_codigoInv"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.057"
+        app:layout_constraintStart_toEndOf="@+id/imageView"
+        app:layout_constraintTop_toBottomOf="@+id/txt_producto"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/txt_producto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="12dp"
+        android:text="@string/txt_productoInv"
+        app:layout_constraintStart_toEndOf="@+id/imageView"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txt_stock"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="@string/txt_stockInv"
+        app:layout_constraintEnd_toStartOf="@+id/txt_salidas"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/txt_stock2"
+        app:layout_constraintTop_toBottomOf="@+id/txt_stock2"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/txt_stock2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="@string/txt_stockInv"
+        app:layout_constraintEnd_toStartOf="@+id/txt_salidas"
+        app:layout_constraintHorizontal_bias="0.511"
+        app:layout_constraintStart_toEndOf="@+id/txt_codigo2"
+        app:layout_constraintTop_toTopOf="@+id/txt_codigo2"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/txt_salidas"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="24dp"
+        android:text="@string/txt_salidasInv"
+        app:layout_constraintEnd_toStartOf="@+id/txt_valor2"
+        app:layout_constraintTop_toBottomOf="@+id/txt_salidas2"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/txt_salidas2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="24dp"
+        android:text="@string/txt_salidasInv"
+        app:layout_constraintEnd_toStartOf="@+id/txt_valor2"
+        app:layout_constraintHorizontal_bias="0.958"
+        app:layout_constraintStart_toEndOf="@+id/txt_stock2"
+        app:layout_constraintTop_toTopOf="@+id/txt_codigo2"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/txt_valor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="24dp"
+        android:text="@string/txt_valorInv"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_valor2"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/txt_valor2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="24dp"
+        android:text="@string/txt_valorInv"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/txt_codigo2"
+        tools:ignore="MissingConstraints" />
+</androidx.constraintlayout.widget.ConstraintLayout>

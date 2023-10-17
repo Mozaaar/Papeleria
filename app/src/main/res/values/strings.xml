@@ -36,4 +36,11 @@
     <string name="cb_oficina">Oficina</string>
     <string name="cb_otros">Otros</string>
     <string name="btn_registrar">Registrar</string>
+    <string name="txt_UserID" translatable="false">XXXXX</string>
+    <string name="txt_UserName" translatable="false">XXXX</string>
+    <string name="todo" translatable="false">TODO</string>
+    <string name="input_codigo">"Ingrese código "</string>
+    <string name="input_idusuario">Id Usuario</string>
+    <string name="txt_password" translatable="false">0000</string>
+    <string name="btn_usuarios">"Ver Usuarios "</string>
 </resources>

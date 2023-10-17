@@ -13,6 +13,9 @@
         <action
             android:id="@+id/action_mainFragment_to_opcionesFragment"
             app:destination="@id/opcionesFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_usuariosFragment"
+            app:destination="@id/usuariosFragment" />
     </fragment>
     <fragment
         android:id="@+id/opcionesFragment"
@@ -28,9 +31,6 @@
         <action
             android:id="@+id/action_opcionesFragment_to_inventarioFragment"
             app:destination="@id/inventarioFragment" />
-        <action
-            android:id="@+id/action_opcionesFragment_to_usuariosFragment"
-            app:destination="@id/usuariosFragment" />
     </fragment>
     <fragment
         android:id="@+id/entradaDatosFragment"

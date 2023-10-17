@@ -32,13 +32,15 @@ public class MainFragment extends Fragment {
     boolean isVisible = false;
     EditText passwordEditText;
     Switch showPasswordSwitch;
-    Button ingresar;
+
 // Base de datos
+    private EditText idUsuario;
     private EditText nomUsuario;
     private EditText password;
     private Button loginBoton;
     private Button registrarBoton;
     private InventarioDBHelper baseDatos;
+
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -117,29 +119,23 @@ public class MainFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
 
-        ingresar = (Button)view.findViewById(R.id.boton_iniciar_sesion);
-        ingresar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Navigation.findNavController(v).navigate(R.id.opcionesFragment);
-
-            }
-        });
-
         //Base de datos
-        nomUsuario = (EditText) getView().findViewById(R.id.input_usuario);
-        password = (EditText) getView().findViewById(R.id.input_contrasena);
-        loginBoton = (Button) getView().findViewById(R.id.boton_iniciar_sesion);
-        registrarBoton = (Button) getView().findViewById(R.id.btn_registrar);
+        idUsuario = (EditText) getView().findViewById( R.id.input_idusuario );
+        password = (EditText) getView().findViewById( R.id.input_contrasena );
+        nomUsuario = (EditText) getView().findViewById( R.id.input_usuario );
+        loginBoton = (Button) getView().findViewById( R.id.boton_iniciar_sesion ) ;
+        registrarBoton = (Button) getView().findViewById( R.id.btn_registrar );
 
-        baseDatos = new InventarioDBHelper( getContext());
+        baseDatos = new InventarioDBHelper( getContext() );
+
         loginBoton.setOnClickListener( new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Cursor usuarioConsultado = baseDatos.getUsuarioByIdPassword( nomUsuario.getText().toString(),
-                        password.getText().toString());
+                Cursor usuarioConsultado = baseDatos.getUsuarioByIdPasswordNombre( idUsuario.getText().toString(), password.getText().toString(), nomUsuario.getText().toString());
+
                 if(usuarioConsultado.moveToFirst()){
-                    Navigation.findNavController(view).navigate(R.id.usuariosFragment);
+                    //Usuario usuariologueado = new Usuario(usuarioConsultado);
+                    Navigation.findNavController(view).navigate(R.id.opcionesFragment);
                 }else{
                     Toast.makeText( getActivity(),"Datos incorrectos",Toast.LENGTH_LONG ).show();
                 }
@@ -149,13 +145,15 @@ public class MainFragment extends Fragment {
         registrarBoton.setOnClickListener( new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                int idValue = Integer.parseInt(nomUsuario.getText().toString());
+                int idValue = Integer.parseInt(idUsuario.getText().toString());
                 int passwordValue = Integer.parseInt( password.getText().toString() );
-                Usuario usuarioNuevo = new Usuario(idValue,passwordValue,"Pepe");
+                String nombreValue = nomUsuario.getText().toString();
+                Usuario usuarioNuevo = new Usuario(idValue,passwordValue,nombreValue);
                 baseDatos.saveUser( usuarioNuevo );
             }
         } );
     }
+
 
 
     }

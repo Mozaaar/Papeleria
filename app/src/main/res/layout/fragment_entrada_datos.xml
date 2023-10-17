@@ -32,61 +32,61 @@
 
     <EditText
         android:id="@+id/input_Producto"
-        android:layout_width="match_parent"
-        android:layout_height="85dp"
+        android:layout_width="394dp"
+        android:layout_height="81dp"
         android:layout_below="@+id/txt_ingresarDatos"
         android:layout_alignStart="@+id/txt_ingresarDatos"
         android:layout_alignEnd="@+id/txt_ingresarDatos"
-        android:layout_marginStart="-137dp"
-        android:layout_marginTop="68dp"
+        android:layout_marginStart="-138dp"
+        android:layout_marginTop="137dp"
         android:layout_marginEnd="-128dp"
         android:autofillHints=""
         android:ems="10"
+        android:hint="@string/input_Producto"
         android:inputType="text"
-        android:text="@string/input_Producto"
         tools:ignore="LabelFor,VisualLintTextFieldSize,TextSizeCheck" />
 
     <EditText
-        android:id="@+id/input_Unidades"
+        android:id="@+id/input_Stock"
         android:layout_width="393dp"
         android:layout_height="78dp"
         android:layout_below="@+id/input_Producto"
         android:layout_alignStart="@+id/input_Producto"
         android:layout_alignEnd="@+id/input_Producto"
-        android:layout_marginStart="1dp"
+        android:layout_marginStart="4dp"
         android:layout_marginTop="57dp"
-        android:layout_marginEnd="-2dp"
+        android:layout_marginEnd="-5dp"
         android:autofillHints=""
         android:ems="10"
+        android:hint="@string/input_Unidades"
         android:inputType="number"
-        android:text="@string/input_Unidades"
         tools:ignore="LabelFor,VisualLintTextFieldSize" />
 
     <EditText
         android:id="@+id/input_Valor"
         android:layout_width="393dp"
         android:layout_height="71dp"
-        android:layout_below="@+id/input_Unidades"
-        android:layout_alignStart="@+id/input_Unidades"
-        android:layout_alignEnd="@+id/input_Unidades"
+        android:layout_below="@+id/input_Stock"
+        android:layout_alignStart="@+id/input_Stock"
+        android:layout_alignEnd="@+id/input_Stock"
         android:layout_marginStart="-2dp"
         android:layout_marginTop="60dp"
         android:layout_marginEnd="2dp"
         android:autofillHints=""
         android:ems="10"
+        android:hint="@string/input_Valor"
         android:inputType="number"
         android:minHeight="48dp"
-        android:text="@string/input_Valor"
         tools:ignore="LabelFor,VisualLintTextFieldSize" />
 
     <Button
         android:id="@+id/btn_registrardatos"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/input_Valor"
+        android:layout_below="@+id/cb_otros"
         android:layout_alignParentEnd="true"
-        android:layout_marginTop="201dp"
-        android:layout_marginEnd="17dp"
+        android:layout_marginTop="47dp"
+        android:layout_marginEnd="20dp"
         android:onClick="registrar"
         android:text="@string/btn_registrardatos" />
 
@@ -136,8 +136,8 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/cb_escritura"
         android:layout_alignStart="@+id/cb_escritura"
-        android:layout_marginStart="2dp"
-        android:layout_marginTop="33dp" />
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="15dp" />
 
     <TextView
         android:id="@+id/txt_tipo"
@@ -145,8 +145,18 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/input_Valor"
         android:layout_alignParentStart="true"
-        android:layout_marginStart="29dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginStart="22dp"
+        android:layout_marginTop="31dp"
         android:text="Seleccione su tipo" />
+
+    <EditText
+        android:id="@+id/input_codigo"
+        android:layout_width="match_parent"
+        android:layout_height="83dp"
+        android:layout_below="@+id/txt_ingresarDatos"
+        android:layout_marginTop="17dp"
+        android:ems="10"
+        android:hint="@string/input_codigo"
+        android:inputType="number" />
 
 </RelativeLayout>

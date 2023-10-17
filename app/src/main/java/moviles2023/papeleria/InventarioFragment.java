@@ -1,23 +1,39 @@
 package moviles2023.papeleria;
 
+import android.database.Cursor;
+import android.os.AsyncTask;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.Navigation;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
+import android.widget.ListView;
+
+import java.util.ArrayList;
+
+import moviles2023.papeleria.data.InventarioDBHelper;
+import moviles2023.papeleria.data.Producto;
+import moviles2023.papeleria.data.Usuario;
 
 /**
  * A simple {@link Fragment} subclass.
  * Use the {@link InventarioFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class InventarioFragment extends Fragment {
+public class InventarioFragment extends Fragment implements ProductoAdapter.OnItemClickListener{
+
+    private RecyclerView listaProductos;
+    private InventarioDBHelper bdInventario;
+    private LinearLayoutManager linearLayoutManager;
+    private ProductoAdapter adaptadorProducto;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -78,8 +94,39 @@ public class InventarioFragment extends Fragment {
 
             }
         });
+        listaProductos =(RecyclerView)getView().findViewById(R.id.listaProductos);
+        bdInventario = new InventarioDBHelper( getContext() );
+
+        listaProductos.setHasFixedSize( true );
+        linearLayoutManager = new LinearLayoutManager( getContext() );
+        listaProductos.setLayoutManager( linearLayoutManager );
+        adaptadorProducto = new ProductoAdapter( this );
+        listaProductos.setAdapter( adaptadorProducto );
+        loadProducto();
+
+    }
+    @Override
+    public void onClick(ProductoAdapter.ViewHolder view, Producto productoActualizado) {
+        bdInventario.updateProducto(productoActualizado,String.valueOf(productoActualizado.getCodigo()));
+        loadProducto();
+    }
+
+    private void loadProducto() {new ProductoLoaderTask().execute( );}
 
 
 
+    private class ProductoLoaderTask extends AsyncTask<Void, Void, Cursor> {
+
+        @Override
+        protected Cursor doInBackground(Void... voids) {
+            return bdInventario.getAllProductos();
+        }
+
+        @Override
+        protected void onPostExecute(Cursor cursor) {
+            if (cursor != null && cursor.getCount() > 0) {
+                adaptadorProducto.swapCursor( cursor );
+            }
+        }
     }
 }

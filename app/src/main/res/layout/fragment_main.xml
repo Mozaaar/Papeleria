@@ -19,6 +19,18 @@
         android:textStyle="italic" />
 
     <EditText
+        android:id="@+id/input_idusuario"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:contextClickable="false"
+        android:ems="10"
+        android:hint="@string/input_idusuario"
+        android:inputType="number"
+        android:textColorHint="#8A8585"
+        tools:ignore="VisualLintTextFieldSize" />
+
+    <EditText
         android:id="@+id/input_usuario"
         android:layout_width="match_parent"
         android:layout_height="12dp"
